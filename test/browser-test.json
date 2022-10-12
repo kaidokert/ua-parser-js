@@ -1591,5 +1591,13 @@
             "version" : "15.6,2",
             "major"   : "15"
         }
+    },
+    {
+        "ua"       : "Mozilla/5.0 (X11; Linux x86_64) Cobalt/23.master.0.0-devel (unlike Gecko) v8/8.8.278.8-jit gles Starboard/15, SystemIntegratorName_DESKTOP_ChipsetModelNumber_2023/FirmwareVersion (BrandName, ModelName)",
+        "expect"   : {
+            "name"   : "Cobalt",
+            "version": "23.0.0",
+            "major"  : "23"
+        }
     }
 ]
