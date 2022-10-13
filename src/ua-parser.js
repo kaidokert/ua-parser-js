@@ -778,6 +778,18 @@
             _browser[VERSION] = undefined;
             rgxMapper.call(_browser, _ua, _rgxmap.browser);
             _browser.major = majorize(_browser.version);
+            if (_ua && _ua.includes('Cobalt')) {
+                var regex = /(Cobalt)\/(?:([0-9]+)\.[\w]+.([0-9])\.([0-9]+)|([0-9]+)\.([0-9]+))/gm;
+                var m = regex.exec(_ua);
+                _browser[NAME] = m[1];
+                if(m[2]) {
+                    _browser[VERSION] = m[2] + '.' + m[3] + '.' + m[4];
+                    _browser.major = m[2];
+                } else {
+                    _browser[VERSION] = m[5] + '.' + m[6];
+                    _browser.major = m[5];
+                }
+            }
             return _browser;
         };
         this.getCPU = function () {
